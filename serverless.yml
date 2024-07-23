@@ -47,9 +47,8 @@ plugins:
 
 package:
   exclude:
-    - node_modules/**
     - coverage/**
-    - test/**
+    - /**/test/**
     - .git/**
     - .vscode/**
     - README.md

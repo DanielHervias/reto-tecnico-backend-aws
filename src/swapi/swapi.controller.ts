@@ -21,9 +21,9 @@ export class SwapiController {
     summary:
       "Obtener los datos de un planeta de Starwars, lo traduce a español",
   })
-  async obtenerUnaPlanetaTraducir(@Param("id") id: number): Promise<string> {
+  async obtenerUnPlanetaTraducir(@Param("id") id: number): Promise<string> {
     try {
-      const planeta = await this.swapiService.obtenerUnaPlanetaTraducir(id);
+      const planeta = await this.swapiService.obtenerUnPlanetaTraducir(id);
       return planeta;
     } catch (error) {
       console.error(error);
@@ -36,7 +36,7 @@ export class SwapiController {
     summary:
       "Obtener los datos de un planeta de Starwars, traducirlo a español y almacenarlo en DynamoDB",
   })
-  obtenerUnaPlanetaTraducirCrear(@Param("id") id: number): Promise<string> {
-    return this.swapiService.obtenerUnaPlanetaTraducirCrear(id);
+  obtenerUnPlanetaTraducirCrear(@Param("id") id: number): Promise<string> {
+    return this.swapiService.obtenerUnPlanetaTraducirCrear(id);
   }
 }

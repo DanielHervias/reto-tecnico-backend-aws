@@ -27,7 +27,7 @@ export class SwapiService {
     }
   }
 
-  async obtenerUnaPlanetaTraducir(id: number): Promise<any> {
+  async obtenerUnPlanetaTraducir(id: number): Promise<any> {
     try {
       const data = await this.obtenerDataSwapi(`${this.baseUrl}/planets/${id}/`);
       if (data) {
@@ -40,7 +40,7 @@ export class SwapiService {
     }
   }
 
-  async obtenerUnaPlanetaTraducirCrear(id: number): Promise<any> {
+  async obtenerUnPlanetaTraducirCrear(id: number): Promise<any> {
     try {
       const data = await this.obtenerDataSwapi(`${this.baseUrl}/planets/${id}/`);
 
