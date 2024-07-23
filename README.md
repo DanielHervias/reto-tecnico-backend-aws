@@ -35,6 +35,7 @@ npm install
    Antes de ejecutar el `sls deploy` hay que crear el archivo `.env` en la raiz del proyecto.
 
 ```
+REGION=${Tu region de uso AWS}
 ACCESS_KEY=${Tu Llave de Acceso}
 SECRET_KEY=${Tu Clave Secreta}
 ```
