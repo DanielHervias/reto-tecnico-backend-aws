@@ -83,4 +83,4 @@ Borra un planeta de Starwars:
 
 #### Lambda:
 
-     app: reto-tecnico-backend-aws-dev-app (59 MB)
+     app: reto-tecnico-backend-aws-dev-app (37 MB)
