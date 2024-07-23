@@ -1,0 +1,59 @@
+service: reto-tecnico-backend-aws
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  stage: dev
+  region: us-east-1
+  apiGateway:
+    shouldStartNameWithService: true
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:*
+          Resource: '*'
+
+resources:
+  Resources:
+    TablaPlanetas:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: Swapi_planetas
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+
+functions:
+  app:
+    handler: dist/handler.handler
+    events:
+      - httpApi:
+          method: any
+          path: /{any+}
+
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin
+
+package:
+  exclude:
+    - node_modules/**
+    - coverage/**
+    - test/**
+    - .git/**
+    - .vscode/**
+    - README.md
+    - .gitignore
+    - .eslintrc.js
+    - .prettierrc
+    - .prettierignore
