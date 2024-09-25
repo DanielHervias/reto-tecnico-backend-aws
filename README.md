@@ -1,4 +1,4 @@
-# Reto técnico Softtek - Swapi
+# Reto técnico - Swapi
 
 ### Configuración inicial - Comandos a ejecutar
 
